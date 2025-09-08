@@ -1,0 +1,21 @@
+# Ignore artifacts:
+dist
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+
+# Ignore package-lock.json
+package-lock.json
+
+# Ignore node_modules
+node_modules
+
+# Ignore generated files
+*.min.js
+*.min.css
+
+# Ignore config files that should keep their formatting
+.vscode/
+.idea/

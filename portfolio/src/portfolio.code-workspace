@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "portfolio",
+			"path": "../.."
+		},
+		{
+			"name": ".vscode",
+			"path": "../../../unear/unear-frontend/.vscode"
+		}
+	],
+	"settings": {}
+}
