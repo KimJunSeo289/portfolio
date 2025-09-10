@@ -64,7 +64,7 @@ const Projects = () => {
         '대상: 통신사 요금제 선택에 어려움을 겪는 20-40대 사용자',
         '기획의도: 복잡하고 다양한 통신사 요금제 중에서 개인의 사용 패턴에 맞는 최적의 요금제를 AI 기반으로 추천하여 사용자의 의사결정을 돕고자 기획',
         '핵심기능: AI 챗봇 기반 실시간 요금제 상담, 개인화된 요금제 진단 및 추천 시스템, 요금제 상세 비교, 사용자별 북마크 및 개인화 서비스',
-        '담당 역할: 요금제 진단 시스템 개발, 요금제 비교 기능 구현, 마이페이지 개발',
+        '담당 역할: 요금제 진단 시스템 개발, 요금제 비교 기능 구현, 마이페이지 개발, 백엔드 개발, 로그인/로그아웃 시스템 구현 ',
       ],
       tech: [
         'React',
@@ -83,6 +83,7 @@ const Projects = () => {
       frontendGithub: 'https://github.com/ureca-chatbot-team3/Ureca-Chatbot-Team3-Frontend',
       backendGithub: 'https://github.com/ureca-chatbot-team3/Ureca-Chatbot-Team3-Backend',
       demo: 'https://yoplan.vercel.app/',
+      demoVideo: 'https://youtu.be/WNlEKSNukGk?si=7OwJG2_b69Xdbpz7',
       figma:
         'https://www.figma.com/design/CaxLZjtFqQi5twrWLiql1V/3%EC%A1%B0-%7C-%EC%9A%94%ED%94%8C%EB%9E%9C?node-id=16-117&t=nDeQgkd8jKFQ2xSV-1',
       image: yoplanImage,
@@ -99,8 +100,7 @@ const Projects = () => {
         '대상: 효율적인 여행 계획을 원하는 20-30대 사용자',
         '기획의도: 바쁜 일상 속에서도 체계적이고 효율적인 여행 일정을 관리할 수 있는 플랫폼을 통해 사용자 맞춤형 여행 경험을 제공하고자 기획',
         '핵심기능: 지도 기반 관광지 및 축제 정보 탐색, 여행지 천 기능 및 개인화된 목록 관리, 캘린더 기반 여행 일정 생성 및 관리, 반응형 모바일 퍼스트 디자인',
-        '담당 역할: 지도 페이지 제작 (Kakao Maps API 연동), 로그인/로그아웃 시스템 및 천 기능 구현',
-        'JWT 기반 인증 시스템과 MongoDB를 활용한 사용자별 찜 기능을 개발했습니다.',
+        '담당 역할: 지도 페이지 제작 (Kakao Maps API 연동), 로그인/로그아웃 시스템 및 찜 기능 구현, 백엔드 개발',
       ],
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Kakao Maps API', '한국관광공사 API'],
       frontendGithub: 'https://github.com/yeji424/road-pick-fe',
@@ -117,14 +117,14 @@ const Projects = () => {
 
     return (
       <div
-        className={`grid lg:grid-cols-2 gap-12 items-center mb-24 ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}
+        className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}
       >
         {/* 텍스트 섹션 */}
         <motion.div
           initial={{ opacity: 0, x: isEven ? -50 : 50 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -50 : 50 }}
           transition={{ duration: 0.6, delay: index * 0.2 }}
-          className={`space-y-6 ${!isEven ? 'lg:col-start-2' : ''}`}
+          className={`space-y-6 md:space-y-8 ${!isEven ? 'lg:col-start-2' : ''}`}
         >
           <div className="space-y-2">
             <h3 className="text-2xl lg:text-3xl font-bold">
@@ -135,7 +135,7 @@ const Projects = () => {
             </h4>
 
             {/* 모바일에서만 보이는 이미지 */}
-            <div className="block lg:hidden mt-4">
+            <div className="block lg:hidden mt-6 mb-4">
               <div className="relative group hover:scale-105 transition-transform duration-300">
                 <img
                   src={project.image}
@@ -296,6 +296,17 @@ const Projects = () => {
                     Figma
                   </a>
                 )}
+                {project.demoVideo && (
+                  <a
+                    href={project.demoVideo}
+                    className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Play className="h-4 w-4" />
+                    시연영상
+                  </a>
+                )}
               </>
             ) : null}
           </div>
@@ -342,7 +353,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Projects List */}
-        <div className="space-y-0">
+        <div className="space-y-16 md:space-y-20 lg:space-y-24">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}

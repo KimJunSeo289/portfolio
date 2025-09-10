@@ -14,26 +14,43 @@ const Navbar = () => {
     { name: 'Skills', href: '#skills' },
   ];
 
-  // 스크롤 감지로 활성 섹션 변경
   useEffect(() => {
     const handleScroll = () => {
       const sections = navigation.map((item) => item.href.slice(1));
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 300;
 
-      for (const section of sections) {
+      
+      const skillsElement = document.getElementById('skills');
+      if (skillsElement) {
+        const skillsTop = skillsElement.offsetTop;
+        if (window.scrollY + window.innerHeight * 0.7 >= skillsTop) {
+          setActiveSection('skills');
+          return;
+        }
+      }
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section === 'skills') continue;
+        
         const element = document.getElementById(section);
         if (element) {
           const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          if (scrollPosition >= offsetTop) {
             setActiveSection(section);
-            break;
+            return;
           }
         }
       }
+      
+      if (window.scrollY < 100) {
+        setActiveSection('hero');
+      }
     };
 
+    handleScroll();
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

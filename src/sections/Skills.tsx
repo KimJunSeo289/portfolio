@@ -106,7 +106,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-4 lg:py-12" ref={ref}>
+    <section id="skills" className="py-12 lg:py-12" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
