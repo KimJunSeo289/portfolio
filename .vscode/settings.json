@@ -36,5 +36,8 @@
     ["clsx\\(([^)]*)\\)", "\"([^\"]*)\""],
     ["cn\\(([^)]*)\\)", "\"([^\"]*)\""],
     ["className\\s*=\\s*[\"']([^\"']*)[\"']", "([^\s]+)"]
-  ]
+  ],
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.includePackageJsonAutoImports": "auto"
 }

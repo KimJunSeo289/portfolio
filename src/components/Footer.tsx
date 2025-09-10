@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-foreground-secondary">
-            <span>© {currentYear} Portfolio. Made with</span>
+            <span>© {currentYear} 프론트엔드_김준서. Made with</span>
             <Heart className="h-4 w-4 text-red-500 fill-current" />
             <span>using React & TypeScript</span>
           </div>
@@ -29,7 +29,7 @@ const Footer = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:hello@example.com"
+              href="mailto:junseo@example.com"
               className="text-foreground-secondary hover:text-primary transition-colors"
               aria-label="Email"
             >

@@ -1,27 +1,27 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
-import Layout from './components/Layout';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Hero from './sections/Hero';
+import Projects from './sections/Projects';
+import Skills from './sections/Skills';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-background">
-        <Layout>
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </AnimatePresence>
-        </Layout>
-      </div>
-    </Router>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+
+      <main>
+        {/* 1. 내 사진 밑 간단한 자기 소개 */}
+        <Hero />
+        
+        {/* 2. 프로젝트 설명 */}
+        <Projects />
+        
+        {/* 3. 사용 스킬 설명 */}
+        <Skills />
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 

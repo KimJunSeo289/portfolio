@@ -1,5 +1,5 @@
 import { HTMLAttributes, forwardRef } from 'react';
-import { clsx } from 'clsx';
+import { cn } from '../../utils';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   // 추가 props가 필요한 경우 여기에 정의
@@ -8,7 +8,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 const Card = forwardRef<HTMLDivElement, CardProps>(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={clsx(
+    className={cn(
       'rounded-2xl border border-border bg-card p-6 shadow-sm backdrop-blur-sm',
       className
     )}
@@ -20,7 +20,7 @@ Card.displayName = 'Card';
 
 const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} className={clsx('flex flex-col space-y-1.5 pb-4', className)} {...props} />
+    <div ref={ref} className={cn('flex flex-col space-y-1.5 pb-4', className)} {...props} />
   )
 );
 
@@ -30,7 +30,7 @@ const CardTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingEle
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={clsx('text-lg font-semibold leading-none tracking-tight', className)}
+      className={cn('text-lg font-semibold leading-none tracking-tight', className)}
       {...props}
     />
   )
@@ -39,7 +39,7 @@ const CardTitle = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLHeadingEle
 CardTitle.displayName = 'CardTitle';
 
 const CardContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => <div ref={ref} className={clsx('pt-0', className)} {...props} />
+  ({ className, ...props }, ref) => <div ref={ref} className={cn('pt-0', className)} {...props} />
 );
 
 CardContent.displayName = 'CardContent';

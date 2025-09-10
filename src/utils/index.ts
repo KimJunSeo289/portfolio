@@ -1,26 +1,7 @@
-import { type ClassValue, clsx } from 'clsx';
-
-export function cn(...inputs: ClassValue[]) {
-  return clsx(inputs);
+// clsx 대신 간단한 커스텀 함수 사용
+export function cn(...classes: (string | undefined | null | false)[]): string {
+  return classes.filter(Boolean).join(' ');
 }
 
-export const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-export const formatDate = (date: Date) => {
-  return new Intl.DateTimeFormat('ko-KR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }).format(date);
-};
-
-export const debounce = <T extends (...args: unknown[]) => unknown>(
-  func: T,
-  delay: number
-): ((...args: Parameters<T>) => void) => {
-  let timeoutId: NodeJS.Timeout;
-  return (...args: Parameters<T>) => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => func(...args), delay);
-  };
-};
+// 실제 사용되지 않는 함수들 제거
+// sleep, formatDate, debounce 제거
