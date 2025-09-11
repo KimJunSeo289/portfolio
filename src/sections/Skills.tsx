@@ -8,6 +8,8 @@ import typescriptIcon from '../assets/typescript.png';
 import htmlIcon from '../assets/html.png';
 import cssIcon from '../assets/css.png';
 import reactIcon from '../assets/react.png';
+import reduxIcon from '../assets/redux.png';
+import zustandIcon from '../assets/zustand.png';
 import expressjsIcon from '../assets/expressjs.svg';
 import framermotionIcon from '../assets/framermotion.svg';
 import socketioIcon from '../assets/soketio.png';
@@ -34,7 +36,7 @@ const Skills = () => {
     },
     'Framework/Library': {
       icon: Layers,
-      skills: ['React', 'Express.js', 'Framer Motion', 'Socket.io', 'TailwindCSS', 'Storybook']
+      skills: ['React', 'Redux', 'Zustand', 'Express.js', 'Framer Motion', 'Socket.io', 'TailwindCSS', 'Storybook']
     },
     Database: {
       icon: Database,
@@ -53,6 +55,8 @@ const Skills = () => {
       'HTML': htmlIcon,
       'CSS': cssIcon,
       'React': reactIcon,
+      'Redux': reduxIcon,
+      'Zustand': zustandIcon,
       'Express.js': expressjsIcon,
       'Framer Motion': framermotionIcon,
       'Socket.io': socketioIcon,
