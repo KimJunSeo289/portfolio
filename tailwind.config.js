@@ -5,12 +5,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Consolas', 'monospace'],
-        display: ['Poppins', 'Inter', 'sans-serif'],
+        sans: ['Jua', 'system-ui', 'sans-serif'],
       },
-      colors: {
-        // Portfolio 전용 다크 테마 컬러
+      colors: { 
         background: {
           DEFAULT: '#0a0a0a',
           secondary: '#111111',

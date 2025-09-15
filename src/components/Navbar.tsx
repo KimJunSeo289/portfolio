@@ -91,7 +91,7 @@ const Navbar = () => {
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
                 className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary relative',
+                  'text-base font-normal transition-colors hover:text-primary relative',
                   isActive(item.href) ? 'text-primary' : 'text-foreground-secondary'
                 )}
               >
@@ -130,7 +130,7 @@ const Navbar = () => {
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
                   className={cn(
-                    'block w-full text-left px-3 py-2 text-sm font-medium transition-colors rounded-lg',
+                    'block w-full text-left px-3 py-2 text-base font-normal transition-colors rounded-lg',
                     isActive(item.href)
                       ? 'text-primary bg-primary/10'
                       : 'text-foreground-secondary hover:text-foreground hover:bg-muted/50'

@@ -72,7 +72,6 @@ const Skills = () => {
       'Cloudtype': cloudtypeIcon
     };
     
-    // 검정색 아이콘들 (배경이 필요한 아이콘들)
     const needsBackground = [
       'Express.js', 
       'MongoDB', 
@@ -119,7 +118,7 @@ const Skills = () => {
           className="text-center mb-4"
         >
           <div className="inline-flex items-center gap-4 mb-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold">
               <span className="text-gradient">Skills</span>
             </h2>
           </div>
@@ -147,7 +146,7 @@ const Skills = () => {
                   }`}
                 >
                   <IconComponent className="h-5 w-5" />
-                  <span className="font-medium">{category}</span>
+                  <span className="font-normal text-base">{category}</span>
                 </button>
               );
             })}
@@ -169,7 +168,7 @@ const Skills = () => {
                     }`}
                   >
                     <IconComponent className="h-5 w-5" />
-                    <span className="font-medium">{category}</span>
+                    <span className="font-normal text-base">{category}</span>
                   </button>
                 );
               })}
@@ -195,7 +194,7 @@ const Skills = () => {
             >
               <div className="text-center space-y-3">
                 <div className="flex justify-center">{getSkillIcon(skill)}</div>
-                <h3 className="font-semibold text-sm group-hover:text-primary transition-colors">
+                <h3 className="font-normal text-base group-hover:text-primary transition-colors">
                   {skill}
                 </h3>
               </div>

@@ -52,7 +52,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="text-xl md:text-xl lg:text-3xl font-bold md:font-medium lg:font-medium leading-tight"
+                className="text-xl md:text-xl lg:text-3xl font-medium md:font-normal lg:font-normal leading-tight"
               >
                 안녕하세요
                 <br />
@@ -68,7 +68,7 @@ const Hero = () => {
               >
                 앞으로 계속 바뀌어가는 시대에 적응하며 지속적인 학습을 통해 발전하고,
                 <br />
-                <span className="text-primary font-semibold">
+                <span className="text-primary font-medium">
                   행복한 사용자 경험을 만드는 프론트엔드 개발자
                 </span>
                 가 되고싶습니다.

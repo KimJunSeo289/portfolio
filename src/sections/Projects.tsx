@@ -127,10 +127,10 @@ const Projects = () => {
           className={`space-y-6 md:space-y-8 ${!isEven ? 'lg:col-start-2' : ''}`}
         >
           <div className="space-y-2">
-            <h3 className="text-2xl lg:text-3xl font-bold">
+            <h3 className="text-3xl lg:text-4xl font-semibold">
               <span className="text-white">{project.title}</span>
             </h3>
-            <h4 className="text-lg">
+            <h4 className="text-xl">
               <span className="text-primary font-medium">{project.subtitle}</span>
             </h4>
 
@@ -147,18 +147,18 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 text-base">
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4 text-foreground-secondary" />
-              <span className="text-white font-medium">기간:</span>
+              <span className="text-white font-normal">기간:</span>
               <span className="text-white">{project.period}</span>
             </div>
             <div className="flex items-center gap-2">
               <Users className="h-4 w-4 text-foreground-secondary" />
-              <span className="text-white font-medium">팀 구성:</span>
+              <span className="text-white font-normal">팀 구성:</span>
               <span className="text-white">{project.team}</span>
               <span className="text-primary">|</span>
-              <span className="text-white font-medium">역할:</span>
+              <span className="text-white font-normal">역할:</span>
               <span className="text-white">{project.role}</span>
             </div>
             <div className="flex items-center gap-2 text-accent">
@@ -182,14 +182,14 @@ const Projects = () => {
                 const content = desc.substring(colonIndex + 1).trim();
                 
                 return (
-                  <p key={idx} className="text-foreground-secondary leading-relaxed">
-                    <span className="text-white font-medium">{keyword}</span>
+                  <p key={idx} className="text-foreground-secondary leading-relaxed text-base">
+                    <span className="text-white font-normal">{keyword}</span>
                     <span className="ml-1">{content}</span>
                   </p>
                 );
               } else {
                 return (
-                  <p key={idx} className="text-foreground-secondary leading-relaxed">
+                  <p key={idx} className="text-foreground-secondary leading-relaxed text-base">
                     {desc}
                   </p>
                 );
@@ -213,7 +213,7 @@ const Projects = () => {
               <>
                 <a
                   href={project.links.github}
-                  className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-base"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -221,14 +221,14 @@ const Projects = () => {
                   GitHub
                 </a>
                 {project.siteDisabled ? (
-                  <span className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg text-sm text-foreground-secondary/50 cursor-not-allowed">
+                  <span className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg text-base text-foreground-secondary/50 cursor-not-allowed">
                     <ExternalLink className="h-4 w-4" />
                     Site (서버 만료)
                   </span>
                 ) : (
                   <a
                     href={`https://${project.links.site}`}
-                    className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-sm"
+                    className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-base"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -238,7 +238,7 @@ const Projects = () => {
                 )}
                 <a
                   href={project.links.figma}
-                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-base"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -247,7 +247,7 @@ const Projects = () => {
                 </a>
                 <a
                   href={project.links.demo}
-                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-base"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -260,7 +260,7 @@ const Projects = () => {
               <>
                 <a
                   href={project.frontendGithub}
-                  className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/80 transition-colors text-base"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -269,7 +269,7 @@ const Projects = () => {
                 </a>
                 <a
                   href={project.backendGithub}
-                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-base"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -278,7 +278,7 @@ const Projects = () => {
                 </a>
                 <a
                   href={project.demo}
-                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-base"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -288,7 +288,7 @@ const Projects = () => {
                 {project.figma && (
                   <a
                     href={project.figma}
-                    className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-sm"
+                    className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-base"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -299,7 +299,7 @@ const Projects = () => {
                 {project.demoVideo && (
                   <a
                     href={project.demoVideo}
-                    className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-sm"
+                    className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg hover:bg-muted/50 transition-colors text-base"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -342,11 +342,11 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-4 mb-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold">
               <span className="text-gradient">Projects</span>
             </h2>
           </div>
-          <p className="text-lg text-foreground-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-foreground-secondary max-w-3xl mx-auto leading-relaxed">
             LG유플러스 유레카 SW교육과정에서 진행한 주요 프로젝트들입니다.
             <br />각 프로젝트를 통해 새로운 기술을 학습하고 실무 역량을 키워왔습니다.
           </p>
