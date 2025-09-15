@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Hero from './sections/Hero';
+import Intro from './sections/Intro';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 
@@ -11,7 +11,7 @@ function App() {
 
       <main>
         {/* 1. 내 사진 밑 간단한 자기 소개 */}
-        <Hero />
+        <Intro />
         
         {/* 2. 프로젝트 설명 */}
         <Projects />

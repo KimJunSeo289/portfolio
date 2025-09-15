@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import profileImage from '../assets/KimJunSeo.jpg';
 
-const Hero = () => {
+const Intro = () => {
+  const introRef = useRef<HTMLElement>(null);
+  
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({
       behavior: 'smooth',
@@ -10,9 +13,63 @@ const Hero = () => {
     });
   };
 
+  useEffect(() => {
+    let touchStartY = 0;
+    
+    const handleWheel = (e: WheelEvent) => {
+      // Intro 섹션에 있을 때만 작동
+      const introElement = introRef.current;
+      if (!introElement) return;
+
+      const introRect = introElement.getBoundingClientRect();
+      const isInIntroSection = introRect.top <= 0 && introRect.bottom > window.innerHeight * 0.5;
+
+      // Intro 섹션에서 아래로 스크롤할 때
+      if (isInIntroSection && e.deltaY > 0) {
+        e.preventDefault();
+        scrollToProjects();
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const introElement = introRef.current;
+      if (!introElement) return;
+
+      const introRect = introElement.getBoundingClientRect();
+      const isInIntroSection = introRect.top <= 0 && introRect.bottom > window.innerHeight * 0.5;
+
+      if (isInIntroSection) {
+        const touchEndY = e.touches[0].clientY;
+        const deltaY = touchStartY - touchEndY;
+
+        // 아래로 스와이프할 때 (델타 > 50으로 임계값 설정)
+        if (deltaY > 50) {
+          e.preventDefault();
+          scrollToProjects();
+        }
+      }
+    };
+
+    // 이벤트 리스너 추가
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   return (
     <section
-      id="hero"
+      ref={introRef}
+      id="intro"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       {/* Background Grid Pattern */}
@@ -99,4 +156,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Intro;

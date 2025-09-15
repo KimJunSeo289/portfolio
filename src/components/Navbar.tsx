@@ -6,10 +6,10 @@ import jkfavicon from '../assets/favicon.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState('intro');
 
   const navigation = [
-    { name: 'Home', href: '#hero' },
+    { name: 'Intro', href: '#intro' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
   ];
@@ -45,7 +45,7 @@ const Navbar = () => {
       }
       
       if (window.scrollY < 100) {
-        setActiveSection('hero');
+        setActiveSection('intro');
       }
     };
 
@@ -74,7 +74,7 @@ const Navbar = () => {
       <div className="container">
         <div className="flex items-center justify-between h-16">
           <button
-            onClick={() => scrollToSection('#hero')}
+            onClick={() => scrollToSection('#intro')}
             className="hover:scale-105 transition-transform"
           >
             <img 
